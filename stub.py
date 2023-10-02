@@ -1,6 +1,5 @@
 import os
 from cryptography.fernet import Fernet
-import tempfile
 import subprocess
 
 def load_key(key_file):
@@ -20,19 +19,10 @@ def decrypt_file(input_file, key):
 
 def run_decrypted_file(decrypted_data):
     try:
-        # Create a temporary binary file to hold the decrypted data
-        with tempfile.NamedTemporaryFile(delete=False, suffix=".exe") as temp_file:
-            temp_file.write(decrypted_data)
-            temp_file_path = temp_file.name
-
-        # Make the temporary file executable and run it
-        os.chmod(temp_file_path, 0o700)
-        subprocess.run([temp_file_path])
+        # Run the decrypted data directly in memory
+        subprocess.run(decrypted_data, shell=True)
 
         print("Decrypted file executed successfully.")
-
-        # Remove the temporary file
-        os.remove(temp_file_path)
 
     except Exception as e:
         print(f"An error occurred: {e}")
